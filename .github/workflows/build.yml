@@ -1,0 +1,25 @@
+on:
+  workflow_call:
+    inputs:
+      ENV_NAME:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Hello World
+        run: echo "Hello, world!"
+
+      - name: Environment Name
+        run: ${{ inputs.ENV_NAME }}

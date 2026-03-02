@@ -1,0 +1,16 @@
+name: 'Deploy Release Branch - QA (AWS INV-DEV)'
+
+on:
+  push:
+    branches:
+      - release/*
+
+permissions:
+  contents: read
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/build.yml
+    with:
+      ENV_NAME: qa
+      
