@@ -19,7 +19,4 @@ jobs:
           fetch-depth: 0
 
       - name: Hello World
-        run: echo "Hello, world!"
-
-      - name: Environment Name
-        run: ${{ inputs.ENV_NAME }}
+        run: echo "Hello, world! ${{ inputs.ENV_NAME }}"
