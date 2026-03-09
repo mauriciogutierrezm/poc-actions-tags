@@ -20,3 +20,8 @@ jobs:
 
       - name: Hello World
         run: echo "Hello, world! ${{ inputs.ENV_NAME }}"
+
+      - name: Print Tag Version
+        if: ${{ inputs.ENV_NAME == 'prod' }}
+        run: echo "Tag version ${{ github.ref_name }}"
+        
